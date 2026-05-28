@@ -1,0 +1,32 @@
+aid: voidly
+name: Voidly
+description: "Internet censorship measurements, incidents, and ISP-level blocking data across 126 countries"
+url: https://voidly.ai/api-docs
+specificationVersion: '0.20'
+created: '2026-05-28'
+modified: '2026-05-28'
+x-source: public-apis/public-apis
+x-category: "Open Data"
+x-tier: 3
+x-tier-reason: bulk-registered-from-public-apis
+tags:
+  - Open Data
+  - Public APIs
+apis:
+  - name: Voidly
+    description: "Internet censorship measurements, incidents, and ISP-level blocking data across 126 countries"
+    humanURL: https://voidly.ai/api-docs
+    baseURL: https://voidly.ai/api-docs
+    tags:
+      - Open Data
+    properties:
+      - type: Documentation
+        url: https://voidly.ai/api-docs
+common:
+  - type: Website
+    url: https://voidly.ai/api-docs
+  - type: PublicAPIsListing
+    url: https://github.com/public-apis/public-apis
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
