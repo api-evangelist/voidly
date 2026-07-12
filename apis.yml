@@ -23,6 +23,10 @@ apis:
       - type: Documentation
         url: https://voidly.ai/api-docs
 common:
+  - type: VulnerabilityDisclosure
+    url: security/voidly-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/voidly-domain-security.yml
   - type: Website
     url: https://voidly.ai/api-docs
   - type: PublicAPIsListing
