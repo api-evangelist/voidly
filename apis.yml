@@ -23,6 +23,10 @@ apis:
       - type: Documentation
         url: https://voidly.ai/api-docs
 common:
+  - type: AgentCard
+    url: a2a/voidly-a2a.yml
+    name: A2A Agent Card
+    description: Agent Card served at /.well-known/agent-card.json (flavored against A2A 1.0.0).
   - type: VulnerabilityDisclosure
     url: security/voidly-vulnerability-disclosure.yml
   - type: DomainSecurity
