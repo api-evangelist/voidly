@@ -2,7 +2,7 @@ aid: voidly
 name: Voidly
 description: "Internet censorship measurements, incidents, and ISP-level blocking data across 126 countries"
 url: https://voidly.ai/api-docs
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-05-28'
 modified: '2026-05-28'
 x-source: public-apis/public-apis
