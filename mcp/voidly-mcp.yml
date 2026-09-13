@@ -1,0 +1,127 @@
+generated: '2026-09-11'
+method: probed
+source: https://api.voidly.ai/mcp
+status: published
+server:
+  name: voidly
+  transport: http
+  url: https://api.voidly.ai/mcp
+deployment:
+  mode: remote
+  endpoint: https://api.voidly.ai/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-11'
+  source: docs-check 2026-09-12 (endpoint found in the provider's own documentation, then probed)
+tools_count: 54
+tools:
+- name: get_censorship_index
+  description: ''
+- name: get_country_status
+  description: ''
+- name: check_domain_blocked
+  description: ''
+- name: get_active_incidents
+  description: ''
+- name: get_incident_detail
+  description: ''
+- name: verify_claim
+  description: ''
+- name: get_risk_forecast
+  description: ''
+- name: get_platform_risk
+  description: ''
+- name: check_service_accessibility
+  description: ''
+- name: get_most_censored
+  description: ''
+- name: agent_relay_stats
+  description: ''
+- name: get_shutdown_risk
+  description: ''
+- name: get_shutdown_risk_leaderboard
+  description: ''
+- name: get_shutdown_risk_accountability
+  description: ''
+- name: get_atlas_score
+  description: ''
+- name: get_multi_horizon_forecast
+  description: ''
+- name: get_global_heatmap
+  description: ''
+- name: get_high_risk_countries
+  description: ''
+- name: get_election_risk
+  description: ''
+- name: get_upcoming_elections
+  description: ''
+- name: get_isp_risk_index
+  description: ''
+- name: get_platform_scores
+  description: ''
+- name: get_incident_stats
+  description: ''
+- name: get_incident_report
+  description: ''
+- name: get_incident_evidence
+  description: ''
+- name: export_incidents
+  description: ''
+- name: get_incidents_since
+  description: ''
+- name: get_classifier_score
+  description: ''
+- name: get_classifier_info
+  description: ''
+- name: get_anomaly_dbscan
+  description: ''
+- name: get_probe_stats
+  description: ''
+- name: get_data_freshness
+  description: ''
+- name: get_prediction_track_record
+  description: ''
+- name: get_ai_service_availability
+  description: ''
+- name: get_country_profile
+  description: ''
+- name: get_censorship_techniques
+  description: ''
+- name: get_censorship_technique_trend
+  description: ''
+- name: get_censorship_by_category
+  description: ''
+- name: get_most_blocked_domains
+  description: ''
+- name: get_data_confidence
+  description: ''
+- name: get_censorship_by_region
+  description: ''
+- name: get_measurement_freshness
+  description: ''
+- name: get_censorship_intent
+  description: ''
+- name: get_category_leaders
+  description: ''
+- name: get_co_blocking
+  description: ''
+- name: get_network_depth
+  description: ''
+- name: get_category_coverage
+  description: ''
+- name: get_censorship_summary
+  description: ''
+- name: get_national_blocklist
+  description: ''
+- name: get_domain_timeline
+  description: ''
+- name: get_classifier_scope
+  description: ''
+- name: get_isp_categories
+  description: ''
+- name: get_country_compare
+  description: ''
+- name: get_categories
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
+authorship: provider
