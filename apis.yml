@@ -58,6 +58,8 @@ common:
     url: https://voidly.ai/api-docs
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
+  - type: Support
+    url: mailto:support@voidly.ai
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
