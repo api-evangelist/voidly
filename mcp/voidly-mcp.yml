@@ -16,112 +16,185 @@ deployment:
 tools_count: 54
 tools:
 - name: get_censorship_index
-  description: ''
+  description: Get the global censorship index with rankings for all monitored countries. Returns country
+    scores, risk tiers, and measurement counts for 130 countries, aggregated from OONI, IODA and CensoredPlanet
+    (the index is computed on the recent meas
 - name: get_country_status
-  description: ''
+  description: Get detailed censorship status for a specific country including blocked domains, anomaly
+    rates, risk tier, and recent incidents.
 - name: check_domain_blocked
-  description: ''
+  description: Check if a specific domain is blocked in a country. Returns blocking status, evidence sources,
+    confidence level, and blocking method (DNS, TCP, TLS, HTTP).
 - name: get_active_incidents
-  description: ''
+  description: Get citable censorship incidents (multi-source, evidence-backed) ranked best-first — real
+    censorship events surface ahead of single-source IODA connectivity-outage signals. Each incident is
+    citable with a human-readable ID (e.g., IR-2026-01
 - name: get_incident_detail
-  description: ''
+  description: Get detailed information about a specific censorship incident including evidence links,
+    affected domains, blocking methods, and timeline.
 - name: verify_claim
-  description: ''
+  description: Verify a censorship claim against real measurement data from OONI, CensoredPlanet, and
+    IODA. Returns verdict with supporting evidence.
 - name: get_risk_forecast
-  description: ''
+  description: Get 7-day internet shutdown and censorship risk forecast for a country using XGBoost ML
+    model trained on historical OONI data and political event calendar.
 - name: get_platform_risk
-  description: ''
+  description: Get censorship risk score for a specific platform across all monitored countries. Shows
+    which countries block it and the overall global risk level.
 - name: check_service_accessibility
-  description: ''
+  description: 'Real-time check: is a domain/service accessible in a specific country right now? Returns
+    blocking status, block rate across ISPs, and evidence.'
 - name: get_most_censored
-  description: ''
+  description: Get the most censored countries ranked by censorship severity score. Returns country name,
+    score, risk tier, and top blocked categories.
 - name: agent_relay_stats
-  description: ''
+  description: Get Voidly Agent Relay network statistics including total registered agents, 24-hour active
+    agents, channel count, message volume, and capability registry.
 - name: get_shutdown_risk
-  description: ''
+  description: KeepItOn-validated 7-day shutdown probability for a country (gate-promoted model; live
+    version in the response). Includes honest validation caveats inline.
 - name: get_shutdown_risk_leaderboard
-  description: ''
+  description: All scored countries sorted by current 7-day shutdown probability, with risk bands and
+    as-of dates.
 - name: get_shutdown_risk_accountability
-  description: ''
+  description: Running public record of archived shutdown-risk predictions joined to actual KeepItOn outcomes
+    — the model proves itself in the open.
 - name: get_atlas_score
-  description: ''
+  description: Atlas Score v2 A–F censorship grade(s). Pass country_code for one country; omit for all
+    graded countries.
 - name: get_multi_horizon_forecast
-  description: ''
+  description: 1/7/30-day censorship forecasts for a country with per-horizon SHAP top features and 90%
+    conformal intervals.
 - name: get_global_heatmap
-  description: ''
+  description: Single-call shutdown-risk heatmap across every watched country, sorted by risk.
 - name: get_high_risk_countries
-  description: ''
+  description: Countries whose 7-day forecast exceeds a risk threshold (default 0.5).
 - name: get_election_risk
-  description: ''
+  description: 'Election-aware censorship risk briefing for a country: upcoming elections joined with
+    forecast and historical election-censorship correlation.'
 - name: get_upcoming_elections
-  description: ''
+  description: Upcoming elections worldwide with censorship-risk overlay.
 - name: get_isp_risk_index
-  description: ''
+  description: ISPs in a country ranked by composite censorship score (aggressiveness, category breadth,
+    blocking methods).
 - name: get_platform_scores
-  description: ''
+  description: All monitored platforms (WhatsApp, X, Telegram, …) ranked by global censorship risk.
 - name: get_incident_stats
-  description: ''
+  description: Aggregate incident statistics. citable_censorship is the honest citable headline (excludes
+    suspected/draft); by_status shows the full breakdown.
 - name: get_incident_report
-  description: ''
+  description: 'Citable report for one incident. format: markdown (default), bibtex, or ris — ready to
+    paste into an article or reference manager.'
 - name: get_incident_evidence
-  description: ''
+  description: Evidence permalinks backing one incident — the raw measurements a journalist can verify.
 - name: export_incidents
-  description: ''
+  description: Bulk export of the incident corpus (json, csv, or jsonl). Status column distinguishes corroborated
+    vs suspected rows. Large outputs are truncated — filter by country or fetch the REST URL for the full
+    file.
 - name: get_incidents_since
-  description: ''
+  description: 'Incidents created or updated after an ISO timestamp (delta sync), oldest first. PAGINATED:
+    the response carries has_more and next_cursor. If has_more is true you have NOT seen every change
+    — call again with cursor=<next_cursor> until it is'
 - name: get_classifier_score
-  description: ''
+  description: Country-day censorship classifier score (GradientBoosting v3.3, LOCO mean F1 0.711 across
+    countries; the LOCO median 0.870 is inflated by small-sample countries).
 - name: get_classifier_info
-  description: ''
+  description: 'Classifier transparency: version, training data, honest evaluation methodology and caveats.'
 - name: get_anomaly_dbscan
-  description: ''
+  description: Unsupervised DBSCAN second-opinion anomaly score for a country (CenDTect-style; AUC 0.65
+    — weaker than the supervised classifier, surfaces shape-anomalous days labels never saw).
 - name: get_probe_stats
-  description: ''
+  description: 'Voidly probe network status: nodes, countries, test cadence, recent measurement volume.'
 - name: get_data_freshness
-  description: ''
+  description: Per-source data freshness receipts (OONI, IODA, CensoredPlanet, probes) — when each pipeline
+    last delivered.
 - name: get_prediction_track_record
-  description: ''
+  description: Public prediction track record across Voidly forecast products — hits, misses, and honest
+    baselines.
 - name: get_ai_service_availability
-  description: ''
+  description: Which AI services (ChatGPT, Claude, Gemini, HuggingFace, …) are reachable per country —
+    state blocking vs vendor geo-restriction, labeled separately.
 - name: get_country_profile
-  description: ''
+  description: 'Consolidated measured-censorship profile for a country in ONE call: data freshness (last
+    measurement + band), 30-day measurement volume, censorship-technique mix (how they block), and the
+    domains nationally blocked there (confirmed across >'
 - name: get_censorship_techniques
-  description: ''
+  description: How a country censors, not just what — breakdown of blocking techniques (DNS manipulation,
+    TCP-reset injection, Tor blocking, connection interference, DPI/middlebox, header manipulation). E.g.
+    China shows notably higher TCP-reset injection
 - name: get_censorship_technique_trend
-  description: ''
+  description: How the censorship METHOD mix shifts over TIME — monthly percentage composition of blocking
+    techniques (DNS manipulation, TCP-reset injection, Tor blocking, connection interference, DPI/middlebox).
+    Companion to get_censorship_techniques (a
 - name: get_censorship_by_category
-  description: ''
+  description: 'How each CONTENT CATEGORY is blocked — the blocking-technique composition per content
+    type (news, communication tools, anonymity/VPN, search, adult, etc.). Reveals content-targeted blocking:
+    e.g. several censors reserve TCP-reset / connecti'
 - name: get_most_blocked_domains
-  description: ''
+  description: 'Global leaderboard of the most-blocked domains, ranked by how many countries nationally
+    block them. HONEST: the top is dominated by legal gambling/piracy/adult blocks, NOT political censorship
+    — use category=ANON to isolate circumvention to'
 - name: get_data_confidence
-  description: ''
+  description: Per-country data-trustworthiness scores (0-100 + band high/medium/low) — how much to trust
+    Voidly's censorship measurements for each country, derived from freshness, volume, stability, and
+    source diversity. The observatory auditing its own
 - name: get_censorship_by_region
-  description: ''
+  description: 'Censorship aggregated by world region (continent by default, or UN sub-region with level=subregion):
+    countries measured, block fraction, and confirmed national blocks per region. HONEST: confirmed-block
+    counts are a measurement-density map,'
 - name: get_measurement_freshness
-  description: ''
+  description: How recently Voidly measured each country — last-measurement timestamp + band (live/recent/aging/stale)
+    across ALL monitored countries. Use to check whether a country's censorship data is current before
+    relying on it (find the country in th
 - name: get_censorship_intent
-  description: ''
+  description: 'What each censor TARGETS: per-country category mix of nationally-blocked domains (confirmed
+    across >=3 networks), rolled into three focus shares — political_speech (NEWS/POLR/HUMR), regulated_morality
+    (GMB/PORN/ALDR), circumvention_tooling'
 - name: get_category_leaders
-  description: ''
+  description: Which countries most censor a given Citizen Lab content category — ranked by distinct domains
+    nationally blocked (confirmed across >=3 networks), with example domains. E.g. category=LGBT -> Russia/Iran/Indonesia;
+    also NEWS, HUMR, ANON, POLR
 - name: get_co_blocking
-  description: ''
+  description: Country PAIRS that nationally block the same domains ('censorship twins') — shared blocklist
+    size + Jaccard + the meaningful signal shared_political (NEWS/HUMR/POLR) and shared_tooling (ANON/VPN),
+    which strips coincidental gambling/adult ov
 - name: get_network_depth
-  description: ''
+  description: 'Per-country measurement DEPTH: how many distinct ISP networks (ASNs) Voidly has evidence
+    from — a proxy for how many independent vantage points back a country''s data, which bounds what the
+    >=3-network confirmed-block gate can confirm. RU 51'
 - name: get_category_coverage
-  description: ''
+  description: How much of Voidly's measured-domain corpus carries a Citizen Lab content category (~69%
+    via the 14k-domain Citizen Lab list) — the observatory disclosing its own categorization blind spot.
+    Returns tagged/untagged counts + per-category doma
 - name: get_censorship_summary
-  description: ''
+  description: One-call snapshot of the state of global censorship Voidly measures — countries measured,
+    countries with confirmed national blocks, the deepest censor (Iran, ~789 domains), the broadest-blocked
+    category, measurement depth + data coverage, a
 - name: get_national_blocklist
-  description: ''
+  description: The COMPLETE list of domains a country blocks nationally (confirmed across >=3 independent
+    networks) — the core 'what does country X block?' product. Returns restriction_map (full domain list),
+    partial_map (sub-national 1-2 network blocks),
 - name: get_domain_timeline
-  description: ''
+  description: 'Full-corpus block TIMELINE for one domain: when it was FIRST observed blocked in each
+    country and how the blocking METHOD evolved over time, sorted earliest-first (censorship-spread order).
+    The long-horizon companion to check_domain_blocked'
 - name: get_classifier_scope
-  description: ''
+  description: 'How accurate is Voidly''s v3.3 censorship classifier? The honest answer under THREE evaluation
+    regimes of increasing difficulty, in one call: stratified-random (in-distribution upper bound, AUC
+    ~0.90 / F1 ~0.73), leave-country-out (cross-cou'
 - name: get_isp_categories
-  description: ''
+  description: 'Per-ISP selective targeting: which CONTENT CATEGORIES a network (ASN) blocks vs leaves
+    alone, separating targeted political censorship from blanket filtering. Pass country=XX&asn=NNNN for
+    one network''s per-category block rates + a blanket/s'
 - name: get_country_compare
-  description: ''
+  description: 'Head-to-head censorship comparison of two countries: each one''s nationally-blocked domain
+    count + Citizen Lab category profile, the SHARED blocklist (domains both confirm-block nationally,
+    incl. shared political news/human-rights and shared'
 - name: get_categories
-  description: ''
+  description: 'Citizen Lab content-category legend: maps every category code used across the censorship
+    data (NEWS, POLR, HUMR, ANON, GMB, LGBT, REL, ...) to its human name plus how many domains carry it
+    in the corpus, how many are confirmed blocked natio'
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
