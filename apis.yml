@@ -35,11 +35,11 @@ x-tier-reason: bulk-registered-from-public-apis
 tags:
   - Open Data
   - Public APIs
+  - A2A
 apis:
   - name: Voidly
     description: "Internet censorship measurements, incidents, and ISP-level blocking data across 126 countries"
     humanURL: https://voidly.ai/api-docs
-    baseURL: https://voidly.ai/api-docs
     tags:
       - Open Data
     properties:
